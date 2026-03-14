@@ -16,13 +16,18 @@
 				system = "x86_64-linux";
 
 				modules = [
+<<<<<<< HEAD
 					./modules/common/default.nix
 					./modules/desktop/default.nix
 					./hardware/workstation.nix
 					./modules/nvidia.nix
 					./modules/hosts/workstation.nix
+=======
+					./hosts/workstation
+
+>>>>>>> 919b8db (Trash cfg)
 					home-manager.nixosModules.home-manager {
-						home-manager.users.walhay = ./home/walhay.nix;
+						home-manager.users.walhay = ./home/walhay;
 					}
 				];
 			};
@@ -32,13 +37,18 @@
 				specialArgs = { inherit nixos-apple-silicon; };
 
 				modules = [
+<<<<<<< HEAD
 					./modules/apple-silicon.nix
 					./modules/common/default.nix
 					./modules/desktop/default.nix
 					./hardware/macbook.nix
 					./modules/hosts/macbook.nix
+=======
+					./hosts/macbook
+
+>>>>>>> 919b8db (Trash cfg)
 					home-manager.nixosModules.home-manager {
-						home-manager.users.walhay = ./home/walhay.nix;
+						home-manager.users.walhay = ./home/walhay;
 					}
 				];
 			};
