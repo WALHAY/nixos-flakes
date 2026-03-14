@@ -1,5 +1,4 @@
 { config, lib, pkgs, ... }: {
-  # Desktop/Wayland only
   programs.niri.enable = true;
 
   services.displayManager.sddm = {
@@ -7,13 +6,8 @@
     wayland.enable = true;
   };
   
-  hardware.graphics.enable = true;
-  hardware.opengl.driSupport32Bit = true;
-
-  hardware.nvidia = {
-    open = true;
-    modesetting.enable = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-    nvidiaSettings = true;
+  hardware.graphics = {
+  	enable = true;
+	enable32Bit = true;
   };
 }

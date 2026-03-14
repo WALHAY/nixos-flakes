@@ -1,6 +1,6 @@
 { pkgs, lib, ...}: {
-  networking.hostName = "nixos";
+  nvidia.enable = false;
+
+  networking.hostName = "workstation";
   networking.networkmanager.enable = true;
-  
-  system.stateVersion = "25.11";
 }

@@ -30,4 +30,6 @@
 
   # Unfree packages (global)
   nixpkgs.config.allowUnfree = true;
+
+  system.stateVersion = "25.11";
 }
