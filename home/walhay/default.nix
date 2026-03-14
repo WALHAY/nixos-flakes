@@ -11,6 +11,7 @@
     starship
 	zsh
 	noctalia-shell
+	yandex-music
   ];
 
   programs.zsh = {
@@ -26,6 +27,8 @@
       eval "$(starship init zsh)"
     '';
   };
+
+  nixpkgs.config.allowUnfree = true;
 
   # Home Manager settings
   home.stateVersion = "25.11";
