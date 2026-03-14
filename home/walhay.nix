@@ -13,6 +13,7 @@
     starship
     home-manager
 	zsh
+	noctalia-shell
   ];
 
   programs.zsh = {
