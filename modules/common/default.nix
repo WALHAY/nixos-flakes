@@ -1,4 +1,5 @@
 { config, pkgs, ... }: {
+imports = [ ./services.nix ];
   environment.systemPackages = with pkgs; [ vim neovim git xwayland xwayland-satellite ];
 
   	networking.networkmanager.enable = true;

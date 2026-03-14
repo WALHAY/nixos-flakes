@@ -5,5 +5,9 @@
 
   config = {
   	boot.loader.efi.canTouchEfiVariables = false;
+
+	hardware.asahi.enable = true;
+
+	services.xserver.videoDrivers = [ "asahi" ];
   };
 }
