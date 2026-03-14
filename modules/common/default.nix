@@ -1,5 +1,7 @@
 { config, pkgs, ... }: {
-  environment.systemPackages = with pkgs; [ vim git neovim xwayland xwayland-satellite ];
+  environment.systemPackages = with pkgs; [ vim neovim git xwayland xwayland-satellite ];
+
+  	networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Moscow";
   i18n.defaultLocale = "en_US.UTF-8";

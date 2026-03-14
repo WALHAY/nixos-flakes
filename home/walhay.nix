@@ -4,14 +4,11 @@
   home.homeDirectory = "/home/walhay";
 
   home.packages = with pkgs; [
-    neovim
     ghostty
     firefox
     telegram-desktop
-    git
     chezmoi
     starship
-    home-manager
 	zsh
 	noctalia-shell
   ];

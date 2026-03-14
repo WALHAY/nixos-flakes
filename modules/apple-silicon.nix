@@ -6,9 +6,9 @@
   ];
 
   config = lib.mkIf config.apple-silicon.enable {
-  	boot.loader = {
-  	  systemd-boot.enable = true;
-  	  efi.canTouchEfiVariables = false;
-  	};
+  	boot.loader.efi.canTouchEfiVariables = false;
+
+  hardware.asahi.enable = true;
+  hardware.apple.touchBar.enable = false;
   };
 }

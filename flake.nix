@@ -8,17 +8,19 @@
 		inputs.nixpkgs.follows = "nixpkgs";
 	};
 	nixos-apple-silicon.url = "github:nix-community/nixos-apple-silicon";
-	import-tree.url = "github:vic/import-tree";
   };
 
-  outputs = { self, nixpkgs, nixos-apple-silicon, home-manager, import-tree, ... }: {
+  outputs = { self, nixpkgs, nixos-apple-silicon, home-manager, ... }: {
 		nixosConfigurations = {
 			workstation = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
 
 				modules = [
-					(import-tree ./modules)
+					./modules/common/default.nix
+					./modules/desktop/default.nix
 					./hardware/workstation.nix
+					./modules/nvidia.nix
+					./modules/hosts/workstation.nix
 					home-manager.nixosModules.home-manager {
 						home-manager.users.walhay = ./home/walhay.nix;
 					}
@@ -30,8 +32,11 @@
 				specialArgs = { inherit nixos-apple-silicon; };
 
 				modules = [
-					(import-tree ./modules)
+					./modules/apple-silicon.nix
+					./modules/common/default.nix
+					./modules/desktop/default.nix
 					./hardware/macbook.nix
+					./modules/hosts/macbook.nix
 					home-manager.nixosModules.home-manager {
 						home-manager.users.walhay = ./home/walhay.nix;
 					}
