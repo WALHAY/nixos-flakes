@@ -4,6 +4,7 @@
 	wireplumber
 	pavucontrol
 	blueman
+	acpi
   ];
 
   hardware.pulseaudio.enable = false;
@@ -14,4 +15,6 @@
 	pulse.enable = true;
 	wireplumber.enable = true;
   };
+
+  services.upower.enable = true;
 }

@@ -1,5 +1,5 @@
 { config, pkgs, ... }: {
-imports = [ ./services.nix ];
+imports = [ ./services.nix ./languages.nix ];
   environment.systemPackages = with pkgs; [ vim neovim git xwayland xwayland-satellite ];
 
   	networking.networkmanager.enable = true;
@@ -33,6 +33,14 @@ imports = [ ./services.nix ];
 
   # Unfree packages (global)
   nixpkgs.config.allowUnfree = true;
+
+	xdg.portal = {
+	  enable = true;
+	  extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+	  wlr.enable = true;  # For Wayland/Asahi
+	};
+	services.dbus.enable = true;
+  
 
   system.stateVersion = "25.11";
 }
