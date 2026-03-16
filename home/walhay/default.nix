@@ -1,7 +1,11 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   home.username = "walhay";
   home.homeDirectory = "/home/walhay";
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "beekeeper-studio-5.5.7"
+  ];
 
   home.packages = with pkgs; [
     ghostty
@@ -9,10 +13,12 @@
     telegram-desktop
     chezmoi
     starship
-	zsh
-	noctalia-shell
-	yandex-music
-	fastfetch
+    zsh
+    noctalia-shell
+    yandex-music
+    fastfetch
+    postman
+    beekeeper-studio
   ];
 
   programs.zsh = {

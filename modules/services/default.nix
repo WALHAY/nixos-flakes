@@ -3,5 +3,6 @@
 		./audio.nix
 		./bluetooth.nix
 		./ssh.nix
+		./docker.nix
 	];
 }
