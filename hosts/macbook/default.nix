@@ -2,8 +2,7 @@
 	imports = [
 		./hardware-configuration.nix
 		../../modules/asahi.nix
-		../../modules/common/default.nix
-		../../modules/desktop/default.nix
+		../../modules
 	];
 
   	networking.hostName = "macbook";

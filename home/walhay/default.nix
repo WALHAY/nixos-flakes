@@ -12,6 +12,7 @@
 	zsh
 	noctalia-shell
 	yandex-music
+	fastfetch
   ];
 
   programs.zsh = {

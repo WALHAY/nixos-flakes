@@ -8,5 +8,6 @@
   
   hardware.graphics = {
   	enable = true;
+	package = pkgs.mesa;
   };
 }

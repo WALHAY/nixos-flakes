@@ -1,6 +1,6 @@
 { config, pkgs, ... }: {
 imports = [ ./services.nix ./languages.nix ];
-  environment.systemPackages = with pkgs; [ vim neovim git xwayland xwayland-satellite ];
+  environment.systemPackages = with pkgs; [ vim neovim git xwayland xwayland-satellite ripgrep ];
 
   	networking.networkmanager.enable = true;
 
@@ -19,6 +19,8 @@ imports = [ ./services.nix ./languages.nix ];
       options = "caps:escape";
     };
   };
+
+  programs.xwayland.enable = true;
 
   users.users.walhay = {
     isNormalUser = true;
