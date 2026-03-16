@@ -1,10 +1,6 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    brightnessctl
     blueman
-    acpi
   ];
-
-  services.upower.enable = true;
 }
