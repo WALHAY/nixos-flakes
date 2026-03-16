@@ -1,18 +1,19 @@
-{ config, pkgs, ...}: {
-  environment.systemPackages = with pkgs; [ 
-  	brightnessctl
-	wireplumber
-	pavucontrol
-	blueman
-	acpi
+{ pkgs, ... }:
+{
+  environment.systemPackages = with pkgs; [
+    brightnessctl
+    wireplumber
+    pavucontrol
+    blueman
+    acpi
   ];
 
   services.pipewire = {
-	enable = true;
-	alsa.enable = true;
-	alsa.support32Bit = true;
-	pulse.enable = true;
-	wireplumber.enable = true;
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    wireplumber.enable = true;
   };
 
   services.upower.enable = true;

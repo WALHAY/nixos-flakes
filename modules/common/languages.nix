@@ -1,7 +1,10 @@
-{ config, pkgs, ...}: {
-	environment.systemPackages = with pkgs; [
-		gcc
-		clang
-		clang-tools
-	];
+{ pkgs, ... }:
+{
+  environment.systemPackages = with pkgs; [
+    gcc
+    clang
+    clang-tools
+    nixd
+    nixfmt
+  ];
 }

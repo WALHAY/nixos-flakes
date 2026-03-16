@@ -1,8 +1,8 @@
-{ pkgs, lib, ...}: {
+{
   imports = [
-	./hardware-configuration.nix
-	../../modules/nvidia.nix
-	../../modules
+    ./hardware-configuration.nix
+    ../../modules/nvidia.nix
+    ../../modules
   ];
 
   networking.hostName = "workstation";

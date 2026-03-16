@@ -1,9 +1,9 @@
-{ config, lib, ...}: {
-	imports = [
-		./hardware-configuration.nix
-		../../modules/asahi.nix
-		../../modules
-	];
+{
+  imports = [
+    ./hardware-configuration.nix
+    ../../modules/asahi.nix
+    ../../modules
+  ];
 
-  	networking.hostName = "macbook";
+  networking.hostName = "macbook";
 }

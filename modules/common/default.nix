@@ -1,8 +1,19 @@
-{ config, pkgs, ... }: {
-imports = [ ./services.nix ./languages.nix ];
-  environment.systemPackages = with pkgs; [ vim neovim git xwayland xwayland-satellite ripgrep ];
+{ pkgs, ... }:
+{
+  imports = [
+    ./services.nix
+    ./languages.nix
+  ];
+  environment.systemPackages = with pkgs; [
+    vim
+    neovim
+    git
+    xwayland
+    xwayland-satellite
+    ripgrep
+  ];
 
-  	networking.networkmanager.enable = true;
+  networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Moscow";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -25,7 +36,10 @@ imports = [ ./services.nix ./languages.nix ];
   users.users.walhay = {
     isNormalUser = true;
     description = "WALHAY";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.zsh;
   };
 
@@ -36,13 +50,12 @@ imports = [ ./services.nix ./languages.nix ];
   # Unfree packages (global)
   nixpkgs.config.allowUnfree = true;
 
-	xdg.portal = {
-	  enable = true;
-	  extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-	  wlr.enable = true;  # For Wayland/Asahi
-	};
-	services.dbus.enable = true;
-  
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    wlr.enable = true; # For Wayland/Asahi
+  };
+  services.dbus.enable = true;
 
   system.stateVersion = "25.11";
 }
