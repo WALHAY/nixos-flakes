@@ -12,13 +12,16 @@
     firefox
     telegram-desktop
     chezmoi
-    starship
     zsh
     noctalia-shell
     yandex-music
     fastfetch
     postman
     beekeeper-studio
+    gradle
+    zulu25
+    kotlin
+    kotlin-language-server
   ];
 
   programs.zsh = {
@@ -30,9 +33,10 @@
       enable = true;
       plugins = [ "git" ];
     };
-    initContent = ''
-      eval "$(starship init zsh)"
-    '';
+  };
+
+  programs.starship = {
+    enable = true;
   };
 
   services.ssh-agent.enable = true;

@@ -4,6 +4,10 @@
   ...
 }:
 {
+  imports = [
+    nixos-apple-silicon.nixosModules.apple-silicon-support
+  ];
+
   config = {
     boot.loader.efi.canTouchEfiVariables = false;
     hardware.asahi.enable = true;
@@ -14,8 +18,4 @@
 
     systemd.services.asahi-speakersafetyd.enable = true;
   };
-
-  imports = [
-    nixos-apple-silicon.nixosModules.apple-silicon-support
-  ];
 }
