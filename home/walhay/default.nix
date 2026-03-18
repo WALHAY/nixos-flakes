@@ -19,9 +19,8 @@
     postman
     beekeeper-studio
     gradle
-    zulu25
+	zulu25
     kotlin
-    kotlin-language-server
   ];
 
   programs.zsh = {

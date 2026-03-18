@@ -8,6 +8,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-apple-silicon.url = "github:nix-community/nixos-apple-silicon";
+    sysc-greet = {
+      url = "github:Nomadcxx/sysc-greet";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -15,6 +19,7 @@
       nixpkgs,
       nixos-apple-silicon,
       home-manager,
+	  sysc-greet,
       ...
     }:
     {
@@ -23,6 +28,7 @@
           system = "x86_64-linux";
 
           modules = [
+		  	sysc-greet.nixosModules.default
             ./hosts/workstation
           ];
         };
@@ -32,6 +38,7 @@
           specialArgs = { inherit nixos-apple-silicon; };
 
           modules = [
+		  	sysc-greet.nixosModules.default
             ./hosts/macbook
 
             home-manager.nixosModules.home-manager

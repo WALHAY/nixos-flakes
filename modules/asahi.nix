@@ -16,6 +16,11 @@
       asahi-audio
     ];
 
+    hardware.graphics = {
+      enable = true;
+      package = pkgs.mesa;
+    };
+
     systemd.services.asahi-speakersafetyd.enable = true;
   };
 }
