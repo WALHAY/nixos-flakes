@@ -24,6 +24,11 @@
 
           modules = [
             ./hosts/workstation
+	    
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.users.walhay = ./home/walhay;
+            }
           ];
         };
 
