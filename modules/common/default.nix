@@ -7,6 +7,7 @@
   environment.systemPackages = with pkgs; [
     vim
     neovim
+	kitty
     git
     xwayland
     xwayland-satellite
