@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
 	imports = [
-		./wireguard.nix
+		./amnezia.nix
 	];
 
   environment.systemPackages = with pkgs; [
