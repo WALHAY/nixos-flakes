@@ -8,7 +8,6 @@
   ];
 
   home.packages = with pkgs; [
-    ghostty
     firefox
     telegram-desktop
     chezmoi
