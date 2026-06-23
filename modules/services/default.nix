@@ -5,5 +5,6 @@
 		./ssh.nix
 		./docker.nix
 		./greeter.nix
+		./steam.nix
 	];
 }
