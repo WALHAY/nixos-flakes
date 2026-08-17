@@ -1,0 +1,3 @@
+# Snowflakes
+
+Nix flake config
